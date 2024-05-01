@@ -55,7 +55,8 @@ sniffio
 streamlit                 
 streamlit-cookies-manager 
 streamlit-lottie          
-streamlit-option-menu     
+streamlit-option-menu    
+st-pages
 tenacity                  
 toml                      
 toolz                     
