@@ -6,9 +6,7 @@ import polars as pl
 from PIL import Image
 import os
 import pandas as pd
-from experiment import ScanImage
 import pytesseract
-from experiment2 import ScanImage2
 from pymongo import MongoClient
 from PIL import Image
 from streamlit_login_auth_ui.widgets import __login__
