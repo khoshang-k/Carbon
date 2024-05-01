@@ -140,6 +140,7 @@ class __login__:
             email_sign_up = st.text_input("Email *", placeholder = 'Please enter your email')
             valid_email_check = check_valid_email(email_sign_up)
             unique_email_check = check_unique_email(email_sign_up)
+            unique_email_check=True
             
             username_sign_up = st.text_input("Username *", placeholder = 'Enter a unique username')
             unique_username_check = check_unique_usr(username_sign_up)
