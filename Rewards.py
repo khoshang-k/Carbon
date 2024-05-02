@@ -76,6 +76,7 @@ if LOGGED_IN == True:
             st.warning("Not Enough Coins")
         else:
             st.success("You redeemed Coupon. Enjoy your Reward")
+            st.toast("Please refresh page to see changes")
             st.write(f"Reward Points Left: {points}")
     if submit2:
         points=pointsUpdate(points,75)
@@ -83,6 +84,7 @@ if LOGGED_IN == True:
             st.warning("Not Enough Coins")
         else:
             st.success("You redeemed Coupon. Enjoy your Reward")
+            st.toast("Please refresh page to see changes")
             st.write(f"Reward Points Left: {points}")
     if submit3:
         points=pointsUpdate(points,100)
@@ -90,6 +92,7 @@ if LOGGED_IN == True:
             st.warning("Not Enough Coins")
         else:
             st.success("You redeemed Coupon. Enjoy your Reward")
+            st.toast("Please refresh page to see changes")
             st.write(f"Reward Points Left: {points}")
     if submit4:
         points=pointsUpdate(points,150)
@@ -97,6 +100,7 @@ if LOGGED_IN == True:
             st.warning("Not Enough Coins")
         else:
             st.success("You redeemed Coupon. Enjoy your Reward")
+            st.toast("Please refresh page to see changes")
             st.write(f"Reward Points Left: {points}")
     if submit5:
         points=pointsUpdate(points,80)
@@ -104,6 +108,7 @@ if LOGGED_IN == True:
             st.warning("Not Enough Coins")
         else:
             st.success("You redeemed Coupon. Enjoy your Reward")
+            st.toast("Please refresh page to see changes")
             st.write(f"Reward Points Left: {points}")
     if submit6:
         points=pointsUpdate(points,120)
@@ -111,4 +116,5 @@ if LOGGED_IN == True:
             st.warning("Not Enough Coins")
         else:
             st.success("You redeemed Coupon. Enjoy your Reward")
+            st.toast("Please refresh page to see changes")
             st.write(f"Reward Points Left: {points}")
