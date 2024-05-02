@@ -2,6 +2,12 @@ import streamlit as st
 from streamlit_login_auth_ui.widgets import __login__
 from st_pages import Page, Section, show_pages, add_page_title,hide_pages
 from pymongo import MongoClient
+def disable():
+    st.session_state.disabled = True
+
+if "disabled" not in st.session_state:
+    st.session_state.disabled=False
+    
 __login__obj = __login__(auth_token = "dk_prod_D8ZQ8GGX75M35KMST4HRTSX97QED",company_name = "Carbon Footprint Calculator",width = 200, height = 250,logout_button_name = 'Logout', hide_menu_bool = False,hide_footer_bool = False,lottie_url = 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json')
 LOGGED_IN= __login__obj.build_login_ui()
 username= __login__obj.get_username()
@@ -28,11 +34,6 @@ if LOGGED_IN == True:
         Page("1_About.py", "About"),
     ]
     )
-    def disable():
-        st.session_state.disabled = True
-
-    if "disabled" not in st.session_state:
-        st.session_state.disabled=False
 
     
     st.toast("Fill this form only once")    
