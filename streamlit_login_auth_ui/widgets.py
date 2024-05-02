@@ -100,7 +100,6 @@ class __login__:
             st.session_state['LOGOUT_BUTTON_HIT'] = False 
 
             del_login = st.empty()
-            st.title("Carbon Footprint Calculator")
             with del_login.form("Login Form"):
                 username = st.text_input("Username", placeholder = 'Your unique username')
                 password = st.text_input("Password", placeholder = 'Your password', type = 'password')
