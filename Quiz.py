@@ -28,6 +28,12 @@ if LOGGED_IN == True:
         Page("1_About.py", "About"),
     ]
     )  
+    def disable():
+        st.session_state.disabled=True
+
+    if "disabled" not in st.session_state:
+        st.session_state.disabled=False
+        
     st.title("Carbon Footprint Quiz")
     st.write("Test your knowledge about carbon footprint!")
     # Define quiz questions and answers
@@ -64,7 +70,7 @@ if LOGGED_IN == True:
         selected_option = st.radio("", options[i], index=None)
         if selected_option == options[i][answers[i]-1]:
             score += 1
-    submit = st.button("Submit")
+    submit = st.button("Submit"on_click=disable,disabled=st.session_state.disabled)
     if submit:
         st.write(f"You got {score} out of 10 questions correct!")
         client = MongoClient('mongodb+srv://carboncalculator2024:zipzcwaQu1UnYTT5@carbonfootprint.febn7uz.mongodb.net/?retryWrites=true&w=majority&appName=carbonfootprint')
