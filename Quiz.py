@@ -18,10 +18,8 @@ show_pages(
 if LOGGED_IN==False:
    hide_pages(["Stats","Home","About","Quiz","Rewards","My Info"])
 if LOGGED_IN == True:
-    if 'run_button' in st.session_state and st.session_state.run_button == True:
-        st.session_state.running = True
-    else:
-        st.session_state.running = False
+    if "disabled" not in st.session_state:
+        st.session_state["disabled"] = False
         
     show_pages(
     [
@@ -71,7 +69,7 @@ if LOGGED_IN == True:
         selected_option = st.radio("", options[i], index=None)
         if selected_option == options[i][answers[i]-1]:
             score += 1
-    submit = st.button("Submit",disabled=st.session_state.running, key='run_button')
+    submit = st.button("Submit",disabled=st.session_state.disabled)
     if submit:
         st.write(f"You got {score} out of 10 questions correct!")
         client = MongoClient('mongodb+srv://carboncalculator2024:zipzcwaQu1UnYTT5@carbonfootprint.febn7uz.mongodb.net/?retryWrites=true&w=majority&appName=carbonfootprint')
