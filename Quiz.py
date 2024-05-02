@@ -18,6 +18,12 @@ show_pages(
 if LOGGED_IN==False:
    hide_pages(["Stats","Home","About","Quiz","Rewards","My Info"])
 if LOGGED_IN == True:
+    def disable():
+        st.session_state.disabled=True
+
+    if "disabled" not in st.session_state:
+        st.session_state.disabled=False
+        
     show_pages(
     [
         Page("Calculator.py","Home"),
@@ -28,11 +34,7 @@ if LOGGED_IN == True:
         Page("1_About.py", "About"),
     ]
     )  
-    def disable():
-        st.session_state.disabled=True
-
-    if "disabled" not in st.session_state:
-        st.session_state.disabled=False
+    
         
     st.title("Carbon Footprint Quiz")
     st.write("Test your knowledge about carbon footprint!")
