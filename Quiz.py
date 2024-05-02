@@ -81,4 +81,4 @@ if LOGGED_IN == True:
         alldoc = collection.find_one({'Username':username}, {'Points':1,'_id':0})
         points=alldoc["Points"]
         collection.update_one({'Username':username},{'$set': {'Points':points+score*3}})
-        st.success(f"You know have {points+score*3} points.")
+        st.success(f"You now have {points+score*3} points.")
