@@ -165,7 +165,7 @@ color_map = {
 }
 
 # Create a line chart using Plotly Express with custom colors
-fig = px.line(df_melted, x="Year", y="Emission", color="Category", 
+fig = px.line(df_melted, x="Year", y="Emission", color="Emission", 
               title="Comparision of Emission", 
               labels={"Value": "Amount", "Year": "Year"},
               line_shape="linear",
