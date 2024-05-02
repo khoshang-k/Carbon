@@ -153,9 +153,9 @@ if LOGGED_IN == True:
          if(gas_pipeline):
             gas_pipeline=round((gas_pipeline*22.73*12)/10000,2)
       if(domestic>0):
-         domestic=round((domestic*348.5*12)/1000,2)
+         domestic=round((domestic*348.5*12)/10000,2)
       if(international>0):
-         international=round((international*532.7*12)/1000,2)
+         international=round((international*532.7*12)/10000,2)
       if(train_travel):
          train_travel=round((train_travel*2.49*12)/1000,2)
       if(bus_travel):
