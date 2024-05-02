@@ -149,9 +149,9 @@ if LOGGED_IN == True:
          val=round(((val*0.82-(float)(amount_renewable))*12)/1000,2)
       if(gas_connection!=None):
          if(gas_cylinder):
-            gas_cylinder=round((gas_cylinder*100*12)/1000,2)
+            gas_cylinder=round((gas_cylinder*100*12)/10000,2)
          if(gas_pipeline):
-            gas_pipeline=round((gas_pipeline*22.73*12)/1000,2)
+            gas_pipeline=round((gas_pipeline*22.73*12)/10000,2)
       if(domestic>0):
          domestic=round((domestic*348.5*12)/1000,2)
       if(international>0):
@@ -162,9 +162,9 @@ if LOGGED_IN == True:
          bus_travel=round((bus_travel*0.1*52)/1000,2)
       if(private_travel!=None):
          if(private_travel=="Petrol"):
-            total_distance=round((total_distance/mileage*2.2*365)/1000,2)
+            total_distance=round((total_distance/mileage*2.2)/1000,2)
          if(private_travel=="Diesel"):
-            total_distance=round((total_distance/mileage*2.6*365)/1000,2)
+            total_distance=round((total_distance/mileage*2.6)/1000,2)
       if(val2>0):
          val2=round((val2*1.6*52)/1000,2)
       if(waste>0):
