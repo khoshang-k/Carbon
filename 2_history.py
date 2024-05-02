@@ -142,34 +142,3 @@ df = pd.DataFrame(data2)
 st.subheader(f"•Emission Comparision")
 fig = px.bar(df, x='Sector', y='Emission',color='Sector')
 st.plotly_chart(fig)
-sum=electricity+gas+wood+air+train+bus+private+waste+food
-# Sample data
-data3 = {
-    "Year": [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
-    "World": [25.5,25.67,26.25,27.65,28.62,25.59,30.61,31.5,32.04,31.49,33.31,34.44,34.94,35.23,35.47,35.46,35.46,36.03,36.77,37.04,35.01,36.82,37.15,37.55],
-    "India": [0.9,0.9,0.9,0.9,1,1,1.1,1.2,1.3,1.4,1.4,1.5,1.5,1.6,1.7,1.8,1.8,1.9,1.9,1.7,1.9,2,2,4],
-    "You": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,sum]
-}
-
-# Create DataFrame
-df = pd.DataFrame(data3)
-
-# Melt the DataFrame to convert it to long format
-df_melted = df.melt(id_vars="Year", var_name="Emission", value_name="Value")
-
-# Define color mapping for each category
-color_map = {
-    "World": "blue",
-    "India": "red",
-    "User": "green"
-}
-
-# Create a line chart using Plotly Express with custom colors
-fig = px.line(df_melted, x="Year", y="Emission", color="Emission", 
-              title="Comparision of Emission", 
-              labels={"Value": "Amount", "Year": "Year"},
-              line_shape="linear",
-              color_discrete_map=color_map)
-
-# Show the plot
-st.plotly_chart(fig)
