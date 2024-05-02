@@ -28,6 +28,9 @@ if LOGGED_IN == True:
         Page("1_About.py", "About"),
     ]
     )
+    def disable():
+        st.session_state.disabled = True
+    
     st.toast("Fill this form only once")    
     st.title("Personal Information")
     st.write("Enter the following information for ease to calculate your carbon emission")
@@ -41,7 +44,7 @@ if LOGGED_IN == True:
         renew_energy = st.number_input("Amount of Energy Renewed(KWh)",step=1,value=0,min_value=0,max_value=1000)
     else:
         renew_energy=0
-    submit = st.button("Submit")
+    submit = st.button("Submit",on_click=disable)
     if submit:
         client = MongoClient('mongodb+srv://carboncalculator2024:zipzcwaQu1UnYTT5@carbonfootprint.febn7uz.mongodb.net/?retryWrites=true&w=majority&appName=carbonfootprint')
         db = client['carbon_footprint']
