@@ -9,6 +9,7 @@ import pandas as pd
 import pytesseract
 from pymongo import MongoClient
 from PIL import Image
+from experiment import ScanImage
 from streamlit_login_auth_ui.widgets import __login__
 import plotly.express as px
 import polars as pl
@@ -82,6 +83,12 @@ if LOGGED_IN == True:
    if val:
       electricity_bill=st.file_uploader("Upload a clear image of Electricity Bill")
       if electricity_bill:
+         img = load_image(electricity_bill)
+         st.image(img)
+
+         with open(os.path.join("Electricity",electricity_bill.name),'wb') as f:
+            f.write(electricity_bill.getbuffer())
+         ScanImage()
          st.success("File Saved")
 
    gas_connection=st.selectbox("🧯Type of Gas Connection",['None','Gas Cylinder','Gas Pipeline'])
