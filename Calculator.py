@@ -34,11 +34,6 @@ show_pages(
 if LOGGED_IN==False:
    hide_pages(["Stats","Home","About","Quiz","Rewards","My Info"])
 
-@st.cache_data
-def load_image(image_file):
-   img = Image.open(image_file)
-   return img
-
 
 if LOGGED_IN == True:
    show_pages(
@@ -51,6 +46,7 @@ if LOGGED_IN == True:
         Page("1_About.py", "About"),
     ]
    ) 
+    
    air_travel=None
    amount_renewable=0
    gas_pipeline=0
@@ -80,6 +76,10 @@ if LOGGED_IN == True:
 
    val = st.number_input('⚡Electricity used per month(KWh)', value = 0,min_value=0,max_value=1000)
    if val:
+      @st.cache_data
+      def load_image(image_file):
+           img = Image.open(image_file)
+           return img
       electricity_bill=st.file_uploader("Upload a clear image of Electricity Bill")
       if electricity_bill:
          img = load_image(electricity_bill)
