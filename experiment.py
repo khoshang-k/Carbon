@@ -1,6 +1,5 @@
 def ScanImage():
     import streamlit as st
-    import shutil
     import numpy as np
     import cv2
     import pytesseract
