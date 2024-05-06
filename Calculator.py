@@ -33,7 +33,6 @@ show_pages(
 )
 if LOGGED_IN==False:
    hide_pages(["Stats","Home","About","Quiz","Rewards","My Info"])
-pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 
 @st.cache_data
 def load_image(image_file):
